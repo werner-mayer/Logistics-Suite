@@ -20,6 +20,8 @@ lib64/
 parts/
 sdist/
 var/
+db.sqlite3
+.vscode/
 media/
 profile_pics/
 wheels/
