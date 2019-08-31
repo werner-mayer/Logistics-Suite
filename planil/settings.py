@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'DeliveryLogistics.apps.DeliverylogisticsConfig',
+    'logistics.apps.LogisticsConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
     'django.contrib.admin',

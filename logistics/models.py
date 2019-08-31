@@ -5,13 +5,14 @@ from django.urls import reverse
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
-    date_posted = models.DateTimeField(default=timezone.now)
+    client = models.CharField(max_length=100)
+    responsible = models.CharField(max_length=100)
+    date = models.DateTimeField()
+    material = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.client + ' ' + str(self.data)
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})

@@ -1,5 +1,7 @@
-{% extends "DeliveryLogistics/base.html" %}
+{% extends "logistics/base.html" %}
 {% block content %}
+    <h1 class="mb-3">Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+{%if if value in posts %}   
 {% for post in posts %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
@@ -13,6 +15,7 @@
     </div>
 </article>
 {% endfor %}
+{% end if %}
 
 {% if is_paginated %}
     {% if page_obj.has_previous %}
