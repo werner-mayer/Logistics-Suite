@@ -1,6 +1,5 @@
 {% extends "logistics/base.html" %}
 {% block content %}
-    {%if if value in posts %} 
         {% for post in posts %}
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
@@ -14,9 +13,8 @@
             </div>
         </article>
         {% endfor %}
-    {% endif%}
 
-    {% if is_paginated and value in posts %}
+    {% if is_paginated  %}
         {% if page_obj.has_previous %}
             <a class="btn btn-outline-info mb-4" href="/?page=1">First</a>      
             <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>

@@ -1,4 +1,4 @@
-from .models import Post
+from .models import Post, Material
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
@@ -9,7 +9,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-
+from .forms import PostCreateForm
+from django import forms
 
 def home(request):
     context = {
@@ -46,11 +47,23 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    form_class = PostCreateForm
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class MaterialCreateView(LoginRequiredMixin, CreateView):
+    model = Material    
+    fields = ['name']
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+
+class MaterialDetailView(DetailView):
+    model = Material
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
