@@ -19,6 +19,14 @@ lib/
 lib64/
 parts/
 sdist/
+/__pycache__/
+__pycache__/
+./__pycache__/
+.__pycache__/
+/migrations/
+migrations/
+./migrations/
+.migrations/
 var/
 env/
 db.sqlite3
@@ -108,6 +116,7 @@ celerybeat-schedule
 ./env/
 venv/
 ENV/
+env
 env.bak/
 venv.bak/
 

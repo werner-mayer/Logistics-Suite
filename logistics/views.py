@@ -23,14 +23,14 @@ def about(request):
     return render(request, 'logistics/about.html', {'title': 'About'})
     
 
-class PostListView(ListView):
+class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'logistics/home.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     paginate_by = 10
     ordering = ['date']
 
-class UserPostListView(ListView):
+class UserPostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'logistics/user_posts.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
@@ -41,7 +41,7 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('date')
 
 
-class PostDetailView(DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
 
@@ -64,6 +64,7 @@ class MaterialCreateView(LoginRequiredMixin, CreateView):
 
 class MaterialDetailView(DetailView):
     model = Material
+
 
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
