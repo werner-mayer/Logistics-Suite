@@ -12,8 +12,8 @@ Installing crispy-forms -- pip install django-crispy-forms
 
 Make users migrations -- python manage.py makemigrations users
 
-
 Make logistics migrations -- python manage.py makemigrations logistics
+
 General migrations -- python manage.py makemigrations
 
 Migrate -- python manage.py Migrate
