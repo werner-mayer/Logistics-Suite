@@ -48,7 +48,7 @@ Opening the shell
 
 Associate profile with user  
 
-     `from django.contrib.auth.models import User
+     from django.contrib.auth.models import User
     
      user = User.objects.first()
     
@@ -56,7 +56,7 @@ Associate profile with user
     
      Profile.objects.create(user=user, image='default.png')
     
-     exit()`
+     exit()
     
     
 Run App 
