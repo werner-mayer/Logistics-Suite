@@ -10,38 +10,58 @@ Installing django
 
 `pip install django`
 
-Installing pillow -- pip install pillow
+Installing pillow  
 
-Installing boostrap3-datetime -- pip install bootstrap3-datetime
+`pip install pillow`
 
-Installing crispy-forms -- pip install django-crispy-forms
+Installing boostrap3-datetime  
 
-Make users migrations -- python manage.py makemigrations users
+`pip install bootstrap3-datetime`
 
-Make logistics migrations -- python manage.py makemigrations logistics
+Installing crispy-forms 
 
-General migrations -- python manage.py makemigrations
+`pip install django-crispy-forms`
 
-Migrate -- python manage.py Migrate
+Make users migrations 
 
-Creating superuser -- python manage.py createsuperuser
+`python manage.py makemigrations users`
 
-Opening the shell -- python manage.py shell
+Make logistics migrations  
 
-Associate profile with user -- 
+`python manage.py makemigrations logistics`
 
-    -- from django.contrib.auth.models import User
+General migrations  
+
+`python manage.py makemigrations`
+
+Migrate  
+
+`python manage.py Migrate`
+
+Creating superuser  
+
+`python manage.py createsuperuser`
+
+Opening the shell  
+
+`python manage.py shell`
+
+Associate profile with user  
+
+     `from django.contrib.auth.models import User
     
-    -- user = User.objects.first()
+     user = User.objects.first()
     
-    -- from users.models import Profile
+     from users.models import Profile
     
-    -- Profile.objects.create(user=user, image='default.png')
+     Profile.objects.create(user=user, image='default.png')
     
-    -- exit()
+     exit()`
     
     
-Run App -- python manage.py runserver
+Run App 
 
---
+`python manage.py runserver`
+
+
 
