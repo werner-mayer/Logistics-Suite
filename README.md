@@ -2,7 +2,7 @@ New virtual environment -- virtualenv env
 
 Activate the virtualenvironment -- source env/bin/activate
 
-Installing django -- pip install django
+Installing django -- `pip install django`
 
 Installing pillow -- pip install pillow
 
